@@ -32,14 +32,17 @@
             qfileIP = new Button();
             ipaddress = new Label();
             groupBox1 = new GroupBox();
-            qfileDO = new Button();
             domain = new Label();
+            qfileDO = new Button();
+            groupBox2 = new GroupBox();
+            sessCheck = new Button();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // setting
             // 
-            setting.Location = new Point(674, 56);
+            setting.Location = new Point(845, 34);
             setting.Name = "setting";
             setting.Size = new Size(94, 29);
             setting.TabIndex = 0;
@@ -60,7 +63,7 @@
             // ipaddress
             // 
             ipaddress.AutoSize = true;
-            ipaddress.Location = new Point(31, 138);
+            ipaddress.Location = new Point(31, 119);
             ipaddress.Name = "ipaddress";
             ipaddress.Size = new Size(21, 20);
             ipaddress.TabIndex = 2;
@@ -74,10 +77,19 @@
             groupBox1.Controls.Add(qfileIP);
             groupBox1.Location = new Point(53, 76);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(509, 196);
+            groupBox1.Size = new Size(509, 156);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "共有フォルダ（アクセス）";
+            // 
+            // domain
+            // 
+            domain.AutoSize = true;
+            domain.Location = new Point(237, 119);
+            domain.Name = "domain";
+            domain.Size = new Size(31, 20);
+            domain.TabIndex = 4;
+            domain.Text = "DO";
             // 
             // qfileDO
             // 
@@ -89,20 +101,31 @@
             qfileDO.UseVisualStyleBackColor = true;
             qfileDO.Click += qfileDO_Click;
             // 
-            // domain
+            // groupBox2
             // 
-            domain.AutoSize = true;
-            domain.Location = new Point(237, 138);
-            domain.Name = "domain";
-            domain.Size = new Size(31, 20);
-            domain.TabIndex = 4;
-            domain.Text = "DO";
+            groupBox2.Controls.Add(sessCheck);
+            groupBox2.Location = new Point(596, 76);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(370, 226);
+            groupBox2.TabIndex = 4;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "groupBox2";
+            // 
+            // sessCheck
+            // 
+            sessCheck.Location = new Point(20, 49);
+            sessCheck.Name = "sessCheck";
+            sessCheck.Size = new Size(200, 58);
+            sessCheck.TabIndex = 5;
+            sessCheck.Text = "接続\r\n（ドメイン）";
+            sessCheck.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(975, 496);
+            ClientSize = new Size(989, 539);
+            Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(setting);
             Name = "Form1";
@@ -110,6 +133,7 @@
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -121,5 +145,7 @@
         private GroupBox groupBox1;
         private Button qfileDO;
         private Label domain;
+        private GroupBox groupBox2;
+        private Button sessCheck;
     }
 }

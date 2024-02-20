@@ -27,7 +27,7 @@ namespace SAMPLE
             try
             {
                 // 接続先を指定
-                using (var conn = new SQLiteConnection("Data Source=DataBase.sqlite"))
+                using (var conn = new SQLiteConnection(connectionString))
                 using (var command = conn.CreateCommand())
                 {
                     // 接続
@@ -50,7 +50,7 @@ namespace SAMPLE
         private void InsertRecord(string name, string data)
         {
             // レコードの登録
-            var query = "INSERT INTO PURCHASELIST (NAME, DATA) VALUES (" +
+            var query = "INSERT INTO QFILE (NAME, DATA) VALUES (" +
                 $"'{name}', '{data}')";
 
             // クエリー実行
@@ -63,7 +63,7 @@ namespace SAMPLE
             {
                 connection.Open();
 
-                var sql = "SELECT * FROM PURCHASELIST WHERE NAME = 'IP'";
+                var sql = "SELECT * FROM QFILE WHERE NAME = 'IP'";
                 using (var command = new SQLiteCommand(sql, connection))
                 {
                     using (var reader = command.ExecuteReader())
@@ -91,13 +91,11 @@ namespace SAMPLE
             if (System.IO.File.Exists(fileName))
             {
                 // MessageBox.Show("'" + fileName + "' セットアップウィザードは存在します。");
-            }
-            else
-            {
+            } else {
                 // テーブル名が存在しなければ作成する
                 StringBuilder query = new StringBuilder();
                 query.Clear();
-                query.Append("CREATE TABLE IF NOT EXISTS PURCHASELIST (");
+                query.Append("CREATE TABLE IF NOT EXISTS QFILE (");
                 query.Append(" NO INTEGER PRIMARY KEY AUTOINCREMENT");
                 query.Append(" ,NAME TEXT NOT NULL");
                 query.Append(" ,DATA TEXT NOT NULL");
@@ -110,7 +108,7 @@ namespace SAMPLE
                 InsertRecord("IP", "192.168.100.250");
                 InsertRecord("DO", "NAS303F9E");
 
-                using (FileStream fs = File.Create(fileName)) ;
+                using (FileStream fs = File.Create(fileName));
             }
         }
 
@@ -120,7 +118,7 @@ namespace SAMPLE
             {
                 connection.Open();
 
-                var sql = "SELECT * FROM PURCHASELIST WHERE NAME = 'DO'";
+                var sql = "SELECT * FROM QFILE WHERE NAME = 'DO'";
                 using (var command = new SQLiteCommand(sql, connection))
                 {
                     using (var reader = command.ExecuteReader())

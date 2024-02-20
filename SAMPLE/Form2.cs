@@ -32,7 +32,7 @@ namespace SAMPLE
                     {
                         var ipaddress = IP.Text.ToString();
 
-                        var sql = "UPDATE PURCHASELIST SET DATA = '" + ipaddress + "' WHERE NAME = 'IP'";
+                        var sql = "UPDATE QFILE SET DATA = '" + ipaddress + "' WHERE NAME = 'IP'";
                         using (var command = new SQLiteCommand(sql, connection))
                         {
                             command.ExecuteNonQuery();
@@ -58,7 +58,7 @@ namespace SAMPLE
                     {
                         var domain = DO.Text.ToString();
 
-                        var sql = "UPDATE PURCHASELIST SET DATA = '" + domain + "' WHERE NAME = 'DO'";
+                        var sql = "UPDATE QFILE SET DATA = '" + domain + "' WHERE NAME = 'DO'";
                         using (var command = new SQLiteCommand(sql, connection))
                         {
                             command.ExecuteNonQuery();
@@ -81,7 +81,7 @@ namespace SAMPLE
             {
                 connection.Open();
 
-                var sql = "SELECT * FROM PURCHASELIST WHERE NAME = 'IP'";
+                var sql = "SELECT * FROM QFILE WHERE NAME = 'IP'";
                 using (var command = new SQLiteCommand(sql, connection))
                 {
                     using (var reader = command.ExecuteReader())
@@ -103,7 +103,7 @@ namespace SAMPLE
             {
                 connection.Open();
 
-                var sql = "SELECT * FROM PURCHASELIST WHERE NAME = 'DO'";
+                var sql = "SELECT * FROM QFILE WHERE NAME = 'DO'";
                 using (var command = new SQLiteCommand(sql, connection))
                 {
                     using (var reader = command.ExecuteReader())
