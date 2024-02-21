@@ -126,7 +126,7 @@
             groupBox2.Size = new Size(669, 156);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
-            groupBox2.Text = "groupBox2";
+            groupBox2.Text = "共有フォルダ（接続状況）";
             // 
             // btnReboot
             // 
