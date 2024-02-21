@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>computer-networks.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="computer-networks.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />

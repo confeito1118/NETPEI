@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             IP = new TextBox();
             setting = new Button();
             label1 = new Label();
@@ -87,8 +88,9 @@
             Controls.Add(label1);
             Controls.Add(setting);
             Controls.Add(IP);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form2";
-            Text = "Form2";
+            Text = "ねとぺい 設定画面";
             Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
