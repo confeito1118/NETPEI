@@ -195,6 +195,23 @@ namespace SAMPLE
             }
         }
 
+        public void pcShutdown()
+        {
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo();
+                psi.FileName = "shutdown.exe";
+                psi.Arguments = "-s -t 5";   // shutdown
+                // psi.Arguments = "-r -t 0";   // reboot
+                psi.CreateNoWindow = true;
+                Process p = Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine(ex.Message);
+            }
+        }
+
         private void pcRebootRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pcReboot();
@@ -275,6 +292,18 @@ namespace SAMPLE
         {
             Form3 form3 = new Form3();
             form3.Show();
+        }
+
+        private void readmeUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.Show();
+        }
+
+        private void DeleteAndShutdown_Click(object sender, EventArgs e)
+        {
+            sessionDelete();
+            pcShutdown();
         }
     }
 }

@@ -36,6 +36,7 @@
             domain = new Label();
             qfileDO = new Button();
             groupBox2 = new GroupBox();
+            DeleteAndShutdown = new Button();
             btnReboot = new Button();
             sessDelete = new Button();
             sessCheck = new Button();
@@ -50,6 +51,7 @@
             closeWToolStripMenuItem = new ToolStripMenuItem();
             SettingSToolStripMenuItem = new ToolStripMenuItem();
             versionVToolStripMenuItem = new ToolStripMenuItem();
+            readmeUToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -83,6 +85,7 @@
             ipaddress.Size = new Size(21, 20);
             ipaddress.TabIndex = 2;
             ipaddress.Text = "IP";
+            ipaddress.Visible = false;
             // 
             // groupBox1
             // 
@@ -92,7 +95,7 @@
             groupBox1.Controls.Add(qfileIP);
             groupBox1.Location = new Point(53, 76);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(509, 156);
+            groupBox1.Size = new Size(509, 193);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "共有フォルダ（アクセス）";
@@ -105,6 +108,7 @@
             domain.Size = new Size(31, 20);
             domain.TabIndex = 4;
             domain.Text = "DO";
+            domain.Visible = false;
             // 
             // qfileDO
             // 
@@ -118,15 +122,26 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(DeleteAndShutdown);
             groupBox2.Controls.Add(btnReboot);
             groupBox2.Controls.Add(sessDelete);
             groupBox2.Controls.Add(sessCheck);
             groupBox2.Location = new Point(596, 76);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(669, 156);
+            groupBox2.Size = new Size(669, 193);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             groupBox2.Text = "共有フォルダ（接続状況）";
+            // 
+            // DeleteAndShutdown
+            // 
+            DeleteAndShutdown.Location = new Point(226, 113);
+            DeleteAndShutdown.Name = "DeleteAndShutdown";
+            DeleteAndShutdown.Size = new Size(200, 58);
+            DeleteAndShutdown.TabIndex = 8;
+            DeleteAndShutdown.Text = "接続切断＆PCシャットダウン";
+            DeleteAndShutdown.UseVisualStyleBackColor = true;
+            DeleteAndShutdown.Click += DeleteAndShutdown_Click;
             // 
             // btnReboot
             // 
@@ -134,7 +149,7 @@
             btnReboot.Name = "btnReboot";
             btnReboot.Size = new Size(200, 58);
             btnReboot.TabIndex = 7;
-            btnReboot.Text = "再起動";
+            btnReboot.Text = "PC再起動";
             btnReboot.UseVisualStyleBackColor = true;
             btnReboot.Click += btnReboot_Click;
             // 
@@ -144,7 +159,7 @@
             sessDelete.Name = "sessDelete";
             sessDelete.Size = new Size(200, 58);
             sessDelete.TabIndex = 6;
-            sessDelete.Text = "削除";
+            sessDelete.Text = "接続切断";
             sessDelete.UseVisualStyleBackColor = true;
             sessDelete.Click += sessDelete_Click;
             // 
@@ -154,13 +169,13 @@
             sessCheck.Name = "sessCheck";
             sessCheck.Size = new Size(200, 58);
             sessCheck.TabIndex = 5;
-            sessCheck.Text = "確認";
+            sessCheck.Text = "接続確認";
             sessCheck.UseVisualStyleBackColor = true;
             sessCheck.Click += sessCheck_Click;
             // 
             // uxCommand
             // 
-            uxCommand.Location = new Point(53, 265);
+            uxCommand.Location = new Point(53, 299);
             uxCommand.Multiline = true;
             uxCommand.Name = "uxCommand";
             uxCommand.ReadOnly = true;
@@ -170,7 +185,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルFToolStripMenuItem, SettingSToolStripMenuItem, versionVToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルFToolStripMenuItem, SettingSToolStripMenuItem, versionVToolStripMenuItem, readmeUToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1300, 28);
@@ -187,42 +202,42 @@
             // cnIPIToolStripMenuItem
             // 
             cnIPIToolStripMenuItem.Name = "cnIPIToolStripMenuItem";
-            cnIPIToolStripMenuItem.Size = new Size(171, 26);
+            cnIPIToolStripMenuItem.Size = new Size(173, 26);
             cnIPIToolStripMenuItem.Text = "接続IP(&I)";
             cnIPIToolStripMenuItem.Click += cnIPIToolStripMenuItem_Click;
             // 
             // cnDODToolStripMenuItem
             // 
             cnDODToolStripMenuItem.Name = "cnDODToolStripMenuItem";
-            cnDODToolStripMenuItem.Size = new Size(171, 26);
+            cnDODToolStripMenuItem.Size = new Size(173, 26);
             cnDODToolStripMenuItem.Text = "接続DO(&D)";
             cnDODToolStripMenuItem.Click += cnDODToolStripMenuItem_Click;
             // 
             // sessCheckCToolStripMenuItem
             // 
             sessCheckCToolStripMenuItem.Name = "sessCheckCToolStripMenuItem";
-            sessCheckCToolStripMenuItem.Size = new Size(171, 26);
+            sessCheckCToolStripMenuItem.Size = new Size(173, 26);
             sessCheckCToolStripMenuItem.Text = "接続確認(&C)";
             sessCheckCToolStripMenuItem.Click += sessCheckCToolStripMenuItem_Click;
             // 
             // sessDeleteEToolStripMenuItem
             // 
             sessDeleteEToolStripMenuItem.Name = "sessDeleteEToolStripMenuItem";
-            sessDeleteEToolStripMenuItem.Size = new Size(171, 26);
-            sessDeleteEToolStripMenuItem.Text = "接続削除(&E)";
+            sessDeleteEToolStripMenuItem.Size = new Size(173, 26);
+            sessDeleteEToolStripMenuItem.Text = "接続切断(&E)";
             sessDeleteEToolStripMenuItem.Click += sessDeleteEToolStripMenuItem_Click;
             // 
             // pcRebootRToolStripMenuItem
             // 
             pcRebootRToolStripMenuItem.Name = "pcRebootRToolStripMenuItem";
-            pcRebootRToolStripMenuItem.Size = new Size(171, 26);
-            pcRebootRToolStripMenuItem.Text = "再起動(R)";
+            pcRebootRToolStripMenuItem.Size = new Size(173, 26);
+            pcRebootRToolStripMenuItem.Text = "PC再起動(R)";
             pcRebootRToolStripMenuItem.Click += pcRebootRToolStripMenuItem_Click;
             // 
             // closeWToolStripMenuItem
             // 
             closeWToolStripMenuItem.Name = "closeWToolStripMenuItem";
-            closeWToolStripMenuItem.Size = new Size(171, 26);
+            closeWToolStripMenuItem.Size = new Size(173, 26);
             closeWToolStripMenuItem.Text = "閉じる(&W)";
             closeWToolStripMenuItem.Click += closeWToolStripMenuItem_Click;
             // 
@@ -240,11 +255,18 @@
             versionVToolStripMenuItem.Text = "バージョン情報(&V)";
             versionVToolStripMenuItem.Click += versionVToolStripMenuItem_Click;
             // 
+            // readmeUToolStripMenuItem
+            // 
+            readmeUToolStripMenuItem.Name = "readmeUToolStripMenuItem";
+            readmeUToolStripMenuItem.Size = new Size(138, 24);
+            readmeUToolStripMenuItem.Text = "使い方・最新版(&U)";
+            readmeUToolStripMenuItem.Click += readmeUToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1300, 637);
+            ClientSize = new Size(1300, 663);
             Controls.Add(uxCommand);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -287,5 +309,7 @@
         private ToolStripMenuItem closeWToolStripMenuItem;
         private ToolStripMenuItem SettingSToolStripMenuItem;
         private ToolStripMenuItem versionVToolStripMenuItem;
+        private ToolStripMenuItem readmeUToolStripMenuItem;
+        private Button DeleteAndShutdown;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SAMPLE
 {
-    partial class Form3
+    partial class Form4
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            label1 = new Label();
+            webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            ((System.ComponentModel.ISupportInitialize)webView21).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // webView21
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(48, 37);
-            label1.Name = "label1";
-            label1.Size = new Size(133, 60);
-            label1.TabIndex = 0;
-            label1.Text = "ソフト名：ねとぺい\r\nバージョン：1.2.0\r\n作成者：松本 晋平";
+            webView21.AllowExternalDrop = true;
+            webView21.CreationProperties = null;
+            webView21.DefaultBackgroundColor = Color.White;
+            webView21.Location = new Point(0, 0);
+            webView21.Name = "webView21";
+            webView21.Size = new Size(1280, 720);
+            webView21.TabIndex = 0;
+            webView21.ZoomFactor = 1D;
             // 
-            // Form3
+            // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(355, 136);
-            Controls.Add(label1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form3";
-            Text = "ねとぺい バージョン情報";
+            ClientSize = new Size(1282, 721);
+            Controls.Add(webView21);
+            Name = "Form4";
+            Text = "ねとぺい 使い方と最新版の確認";
+            ((System.ComponentModel.ISupportInitialize)webView21).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }
