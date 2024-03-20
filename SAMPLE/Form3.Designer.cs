@@ -39,7 +39,7 @@
             label1.Name = "label1";
             label1.Size = new Size(133, 60);
             label1.TabIndex = 0;
-            label1.Text = "ソフト名：ねとぺい\r\nバージョン：1.2.0\r\n作成者：松本 晋平";
+            label1.Text = "ソフト名：ねとぺい\r\nバージョン：1.2.2\r\n作成者：松本 晋平";
             // 
             // Form3
             // 

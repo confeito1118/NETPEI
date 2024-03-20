@@ -20,7 +20,8 @@ namespace SAMPLE
         async void InitializeAsync()
         {
             await webView21.EnsureCoreWebView2Async(null);
-            webView21.CoreWebView2.Navigate("https://owl-blog.net/tag/netopei/");
+            // webView21.CoreWebView2.Navigate("https://owl-blog.net/tag/netopei/");
+            webView21.CoreWebView2.Navigate("https://npo-yudu.jp/netopei-v122/");
         }
     }
 }
